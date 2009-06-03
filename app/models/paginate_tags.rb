@@ -143,6 +143,7 @@ module PaginateTags
       attr = tag.attr.symbolize_keys
       
       options = {}
+
       options[:page] = tag.attr['page'] || @request.path[/^#{Regexp.quote(tag.locals.page.url)}#{Regexp.quote(Radiant::Config['paginate.url_route'])}(\d+)\/?$/, 1]
       options[:per_page] = tag.attr['per_page'] || 10
       
